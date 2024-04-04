@@ -11,7 +11,6 @@ const Footer = () => {
     flexDirection: 'column',
     alignItems: 'center', 
     justifyContent: 'center', 
-    marginTop: '40%'
   };
 
   const rowStyle = {
@@ -77,7 +76,7 @@ const Footer = () => {
         </div>
 
         <div className="row" style={rowStyle}>
-          INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
+          INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: V.K.DEVAGANESHVAR
         </div>
       </div>
     </footer>

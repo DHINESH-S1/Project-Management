@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 const NavBar = () => {
   const [isSlidePanelOpen, setSlidePanelOpen] = useState(false);
@@ -27,8 +28,10 @@ const NavBar = () => {
   const logoStyle = {
     textDecoration: 'none',
     color: 'white',
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center', 
+    marginRight: 'auto', 
+    marginTop:'5px'
   };
 
   const linksStyle = {
@@ -52,22 +55,18 @@ const NavBar = () => {
           <Button color="inherit" onClick={toggleSlidePanel}>
             <MenuIcon />
           </Button>
-          <Typography variant="h6">
-            <Link to="/" style={logoStyle}>
-              Home
+          <Typography variant="h6" style={logoStyle}>
+            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+              <HomeRoundedIcon style={{ marginRight: '0.5rem' }} />
             </Link>
           </Typography>
           <div style={linksStyle}>
-          <Button color="inherit">   
-              <Link to="/about" style={linkStyle}>
-            About
-           </Link>
-        </Button>
-        <Button color="inherit">   
-              <Link to="/contact" style={linkStyle}>
-           contact us
-           </Link>
-        </Button>
+            <Button color="inherit">Help</Button>
+            <Button color="inherit"> 
+              <Link to="/Contact" style={linkStyle}>
+                Contact us
+              </Link>
+            </Button>
             <Button color="inherit">
               <Link to="/login" style={linkStyle}>
                 Login
@@ -84,24 +83,17 @@ const NavBar = () => {
       
       <Drawer anchor="left" open={isSlidePanelOpen} onClose={toggleSlidePanel} style={drawerStyle}>
         <List>
-        <ListItem button><Link to='/acs'>
-            <ListItemText primary="AC Service & Repair" /></Link>
-          </ListItem>
-          <ListItem button><Link to='/tyre'>
-            <ListItemText primary="Tyres & Wheel Care" /></Link>
-          </ListItem>
-          <ListItem button><Link to='/Batt'>
-            <ListItemText primary="Batteries" /></Link>
-          </ListItem>
-          <ListItem button><Link to='/period'>
-            <ListItemText primary="Periodic Services" /></Link>
-          </ListItem>
-          
-           <ListItem button><Link to='/Paint'>
-            <ListItemText primary="Denting & Painting" /></Link> 
+          <ListItem button>
+            <ListItemText primary="Profile" />
           </ListItem>
           <ListItem button>
-            <ListItemText primary="Car spa & Cleaning" />
+            <ListItemText primary="Help" />
+          </ListItem>
+          <ListItem button>
+            <ListItemText primary="Settings" />
+          </ListItem>
+          <ListItem button>
+            <ListItemText primary="Themes" />
           </ListItem>
         </List>
       </Drawer>
